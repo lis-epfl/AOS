@@ -43,3 +43,10 @@ img/raw/*
 AOS\ for\ Own\ Projects/LFR/vs/.vs/*
 AOS\ for\ Own\ Projects/LFR/vs/imgui.ini
 AOS\ for\ Own\ Projects/LFR/vs/benchmark.json
+
+# Additions from Ben
+AOS\ Groundstation/AOS\ server/DroneSwarm_Wrapper/build/
+AOS\ Groundstation/AOS\ server/DroneSwarmServer/x64/
+AOS\ Groundstation/AOS\ server/DroneSwarmServer/.vs/
+AOS\ Groundstation/AOS\ server/DroneSwarmServer.exe.WebView2
+AOS\ Groundstation/AOS\ server/DroneSwarmServer/*.lib

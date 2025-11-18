@@ -16,6 +16,11 @@ import keyboard
 from paho.mqtt import client as mqtt_client
 import os
 
+# Imports for image sharing to memory mapped files
+import struct
+import mmap
+import utils.imageSharingUtil as imageSharingUtil
+
 ###################################### Parameters to be set ###############################################
 
 decode = w.isHWDecoderEnabled()
@@ -75,8 +80,8 @@ global action_in_progress,  waypoint_confirmation
 action_in_progress = False
 task = ''
 waypoint_confirmation = False
-num_drones_for_map_visualization = 10
-drones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+num_drones_for_map_visualization = 2
+drones = [1, 2]#, 3, 4, 5, 6, 7, 8, 9, 10] 
 connected_drones = [] # List to store the connected drones
 
 ####################### MQTT configurations ############################
@@ -85,7 +90,7 @@ broker = "localhost"
 port = 9001
 topic = "drone"
 username = 'user'
-password = 'user'
+password = 'user' #'$7$101$Plq2dp/DgXs72fPw$5lYtn2psZyNu9VNvPIFKRU0HPed0DG28HBrG4o4oXYbxUurWmWO8Mr1HMjxB0K9LkmJdKspkJgnyJmsbg7KOwA==' #doesn't seem to matter, I assume because I specify the password file in my mosquitto conf
 
 # dronedata
 droneContent = """
@@ -108,7 +113,7 @@ def connect_mqtt(broker, port, topic, client_id, username, password):
         if rc != 0:
             print(f"Failed to connect, return code {rc}\n")
 
-    client = mqtt_client.Client(client_id, transport="websockets")
+    client = mqtt_client.Client(mqtt_client.CallbackAPIVersion.VERSION1, client_id, transport="websockets")
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
@@ -252,7 +257,7 @@ def publisher_thread(broker, port, topic, username, password):
                                 drones.remove(droneId)
                                 print('connected_drones', connected_drones)
                                 print('drones', drones)
-                            
+
                 # print(telemetry_elements)
                 latitude = telemetry_elements[0] 
                 longitude = telemetry_elements[1]
@@ -290,7 +295,48 @@ def publisher_thread(broker, port, topic, username, password):
                     Image = cv2.cvtColor(Image_Telemetry_data[0:3110400].reshape(1080*3//2, 1920), cv2.COLOR_YUV420p2RGB)   # for software decoding
                 elif decoding == 'hardware':
                     Image = cv2.cvtColor(Image_Telemetry_data[0:3110400].reshape(1080*3//2, 1920), cv2.COLOR_YUV2BGR_NV12) # for hardware decoding
+                                    
+                 # Convert the image to base64
+                retval, buffer = cv2.imencode('.jpg', Image)
+                imgBase64 = base64.b64encode(buffer).decode('utf-8')
+                
+                ######################################### Image Sharing to Memory Mapped Files ############################################
+                
+                # Downsize image parameters
+                width = 1920
+                height = 1080
+                depth = 3
+                processedImageSize = width * height * depth
+
+                # Resize the image to be 640x360
+                Image = cv2.resize(Image, (width, height))
+
+                # Shared memory configuration for multiple images
+                metadataSize = 12
+                blockSize = metadataSize + processedImageSize
+                totalMMFSize = num_drones_for_map_visualization * blockSize
+
+                # Write the image to shared memory
+                try:
+                    # Open (or create) the memory mapped file with the total size for all blocks
+                    processedMMF = mmap.mmap(-1, totalMMFSize, "ProcessedImageSharedMemory")
                     
+                    # Compute the block offset for this droneId (assumed to be in the range [0, numImages-1])
+                    blockOffset = (droneId-1) * blockSize
+
+                    # Optionally flip the image vertically (as in your original code)
+                    flipped_image = cv2.flip(Image, 0)
+
+                    # Write the memory block (header and image data)
+                    imageSharingUtil.write_memory(processedMMF, blockOffset, processedImageSize, flipped_image, droneId-1, heading)
+                    
+                    # Clean up image if desired
+                    del Image
+                except Exception as e:
+                    print("Problem opening/reading processed memory")
+                    print(e)
+
+                ############################################################################################################################
                 
                 with lock:
                     if i == 1:
@@ -316,9 +362,7 @@ def publisher_thread(broker, port, topic, username, password):
                     else:
                         drone_waypoint_no = 0
                            
-                # Convert the image to base64
-                retval, buffer = cv2.imencode('.jpg', Image)
-                imgBase64 = base64.b64encode(buffer).decode('utf-8')
+               
                 # telemdata = """ID: {:.0f}, ALT: {:.2f}m""".format(int(droneId), float(altitude)) 
                 
                 telemdata = """ID:{:.0f},Alt:{:.1f}m,Spd:{:.1f}m/s,  Com:{:.1f},Pit:{:.1f},Yaw:{:.1f},Wpt:{:.0f} """.format(int(droneId), float(altitude), speed, float(heading), float(gimbal_pitch), float(gimbal_yaw), int(drone_waypoint_no))

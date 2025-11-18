@@ -1,0 +1,91 @@
+﻿  pch.cpp
+  Dialog2Dlg.cpp
+  Dialog3Dlg.cpp
+  Dialog1Dlg.cpp
+  DroneSwarmServer.cpp
+  DroneSwarmServerDlg.cpp
+  ListCtrlEx.cpp
+  MsgHook.cpp
+  UIAnimationWnd.cpp
+  ViewComponent.cpp
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(183,48): warning C4244: '=': conversion from 'INT_PTR' to 'LONG', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(358,20): warning C4244: 'return': conversion from 'int64_t' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(366,24): warning C4244: '=': conversion from 'LPARAM' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(240,39): warning C4244: 'argument': conversion from 'const INT_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(367,26): warning C4244: '=': conversion from 'LPARAM' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(326,20): warning C4244: 'initializing': conversion from 'INT_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(373,75): warning C4244: 'argument': conversion from 'INT_PTR' to 'UINT32', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(447,9): warning C4244: 'return': conversion from 'LRESULT' to 'BOOL', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(686,21): warning C4244: '=': conversion from 'INT_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(690,21): warning C4244: '=': conversion from 'INT_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(670,11): warning C4244: 'initializing': conversion from 'DWORD_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\UIAnimationWnd.cpp(849,38): warning C4244: 'argument': conversion from 'INT_PTR' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(1028,38): warning C4244: 'argument': conversion from 'LPARAM' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\ListCtrlEx.cpp(1029,39): warning C4244: 'argument': conversion from 'LPARAM' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog3Dlg.cpp(178,24): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog3Dlg.cpp(467,54): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog3Dlg.cpp(484,54): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog3Dlg.cpp(498,54): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog3Dlg.cpp(655,18): warning C4996: 'gethostbyaddr': Use getnameinfo() or GetNameInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(105,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(290,74): warning C4996: 'AVFrame::interlaced_frame': was declared deprecated
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(502,13): warning C4996: 'AVFrame::key_frame': was declared deprecated
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(521,13): warning C4996: 'AVFrame::interlaced_frame': was declared deprecated
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(523,13): warning C4996: 'AVFrame::top_field_first': was declared deprecated
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(540,3): warning C4996: 'avcodec_close': was declared deprecated
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(577,125): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(577,95): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(577,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(577,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\Dialog1Dlg.cpp(803,22): warning C4244: '=': conversion from 'const uint64_t' to 'int', possible loss of data
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+Dialog3Dlg.obj : warning LNK4006: "int (__cdecl* p_SetConsoleIcon)(struct HICON__ *)" (?p_SetConsoleIcon@@3P6AHPEAUHICON__@@@ZEA) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog3Dlg.obj : warning LNK4006: "struct _iobuf * * stream" (?stream@@3PAPEAU_iobuf@@A) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog3Dlg.obj : warning LNK4006: "int * log_sel" (?log_sel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog3Dlg.obj : warning LNK4006: "int * QoSsel" (?QoSsel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog1Dlg.obj : warning LNK4006: "int (__cdecl* p_SetConsoleIcon)(struct HICON__ *)" (?p_SetConsoleIcon@@3P6AHPEAUHICON__@@@ZEA) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog1Dlg.obj : warning LNK4006: "struct _iobuf * * stream" (?stream@@3PAPEAU_iobuf@@A) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog1Dlg.obj : warning LNK4006: "int * log_sel" (?log_sel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+Dialog1Dlg.obj : warning LNK4006: "int * QoSsel" (?QoSsel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "int (__cdecl* p_SetConsoleIcon)(struct HICON__ *)" (?p_SetConsoleIcon@@3P6AHPEAUHICON__@@@ZEA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "struct _iobuf * * stream" (?stream@@3PAPEAU_iobuf@@A) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "int * log_sel" (?log_sel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "int * QoSsel" (?QoSsel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "unsigned char * rawData" (?rawData@@3PAEA) already defined in Dialog3Dlg.obj; second definition ignored
+DroneSwarmServer.obj : warning LNK4006: "unsigned char * myMAC" (?myMAC@@3PAEA) already defined in Dialog3Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "int (__cdecl* p_SetConsoleIcon)(struct HICON__ *)" (?p_SetConsoleIcon@@3P6AHPEAUHICON__@@@ZEA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "struct _iobuf * * stream" (?stream@@3PAPEAU_iobuf@@A) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "int * log_sel" (?log_sel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "int * QoSsel" (?QoSsel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "unsigned char * rawData" (?rawData@@3PAEA) already defined in Dialog3Dlg.obj; second definition ignored
+DroneSwarmServerDlg.obj : warning LNK4006: "unsigned char * myMAC" (?myMAC@@3PAEA) already defined in Dialog3Dlg.obj; second definition ignored
+ViewComponent.obj : warning LNK4006: "int (__cdecl* p_SetConsoleIcon)(struct HICON__ *)" (?p_SetConsoleIcon@@3P6AHPEAUHICON__@@@ZEA) already defined in Dialog2Dlg.obj; second definition ignored
+ViewComponent.obj : warning LNK4006: "struct _iobuf * * stream" (?stream@@3PAPEAU_iobuf@@A) already defined in Dialog2Dlg.obj; second definition ignored
+ViewComponent.obj : warning LNK4006: "int * log_sel" (?log_sel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+ViewComponent.obj : warning LNK4006: "int * QoSsel" (?QoSsel@@3PAHA) already defined in Dialog2Dlg.obj; second definition ignored
+paho-mqtt3c-static.lib(MQTTClient.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTClient.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTProperties.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTProperties.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTTime.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTTime.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(LinkedList.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(LinkedList.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Socket.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Socket.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTPersistence.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTPersistence.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(utf-8.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(utf-8.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTPacket.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTPacket.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTPacketOut.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTPacketOut.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Log.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Log.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTProtocolClient.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTProtocolClient.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTProtocolOut.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTProtocolOut.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Thread.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Thread.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(SocketBuffer.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(SocketBuffer.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(StackTrace.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(StackTrace.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Heap.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Heap.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(WebSocket.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(WebSocket.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Proxy.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Proxy.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Clients.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Clients.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(MQTTPersistenceDefault.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(MQTTPersistenceDefault.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Messages.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Messages.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Base64.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Base64.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(Tree.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(Tree.obj)' or at ''; linking object as if no debug info
+paho-mqtt3c-static.lib(SHA1.obj) : warning LNK4099: PDB '' was not found with 'paho-mqtt3c-static.lib(SHA1.obj)' or at ''; linking object as if no debug info
+C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\x64\Debug\DroneSwarmServer.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  DroneSwarmServer.vcxproj -> C:\Users\jarvis\Documents\AOS_Swarm\AOS\AOS Groundstation\AOS server\DroneSwarmServer\x64\Debug\DroneSwarmServer.exe
