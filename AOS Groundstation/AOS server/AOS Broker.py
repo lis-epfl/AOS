@@ -1,3 +1,4 @@
+print("AOS Broker is running...")
 # reqired libraries
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
@@ -20,6 +21,8 @@ import os
 import struct
 import mmap
 import utils.imageSharingUtil as imageSharingUtil
+
+print("AOS Broker libraries loaded.")
 
 ###################################### Parameters to be set ###############################################
 
@@ -80,8 +83,8 @@ global action_in_progress,  waypoint_confirmation
 action_in_progress = False
 task = ''
 waypoint_confirmation = False
-num_drones_for_map_visualization = 2
-drones = [1, 2]#, 3, 4, 5, 6, 7, 8, 9, 10] 
+num_drones_for_map_visualization = 1
+drones = [1]#, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
 connected_drones = [] # List to store the connected drones
 
 ####################### MQTT configurations ############################
@@ -90,7 +93,7 @@ broker = "localhost"
 port = 9001
 topic = "drone"
 username = 'user'
-password = 'user' #'$7$101$Plq2dp/DgXs72fPw$5lYtn2psZyNu9VNvPIFKRU0HPed0DG28HBrG4o4oXYbxUurWmWO8Mr1HMjxB0K9LkmJdKspkJgnyJmsbg7KOwA==' #doesn't seem to matter, I assume because I specify the password file in my mosquitto conf
+password = 'user' #Set in mosquitto.conf and passwd file
 
 # dronedata
 droneContent = """
