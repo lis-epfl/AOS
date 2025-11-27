@@ -61,7 +61,7 @@ drone10_waypoint_no = 0
 
 lock = threading.Lock()
 
-debug = True
+debug = False
 crop_size = 1080  # original size of image is 1920x1080
 
 # new = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()) # Get the current time as string
@@ -543,8 +543,6 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
                     print ("go thread for drone1:", drone1_Waypoint_sent, incrementor)
                 break # Exit the loop
             
-        print("drone1 waiting to reach the waypoint...")
-        
         while True:
             drone1_Image_Telemetry_data = w.getImageAndTelemetryData(1)
             drone1_Telemetry_data = (bytearray(drone1_Image_Telemetry_data[3110408:]).decode())
@@ -552,12 +550,6 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
             drone1_elements = drone1_Telemetry_data.split(":")                 # Extract all elements from the string
             drone1_Waypoint_reached = drone1_elements[14]
             
-            
-            # ------------------------------ STUCK HERE DEBUGGING ------------------------------
-            # if debug:
-            #     print("drone1_Waypoint_reached_for_go:",drone1_Waypoint_reached)
-                #print drone elements 14 and 15
-                # print("drone1 waypoint stat: ")
             
             if drone1_Waypoint_reached == str(incrementor):
                 if debug:
