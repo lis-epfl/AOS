@@ -1,16 +1,14 @@
 @echo off
 
-REM Change directory to Mosquitto folder
+REM ── 1) Ensure Mosquitto is fresh ────────────────────────────────────
 cd "C:\Program Files\mosquitto"
-
-REM Stop and start Mosquitto service
 net stop mosquitto
 net start mosquitto
 
-REM Run Mosquitto with specific config
-.\mosquitto -c mosquitto.conf
+REM    Run Mosquitto in this same window (backgrounded)
+start /B "" mosquitto -c mosquitto.conf
 
-REM Change back to the original directory (assuming it's on the same drive)
+REM ── 2) Back to repo root ────────────────────────────────────────────
 cd /d %~dp0
 
 REM Start the executable file

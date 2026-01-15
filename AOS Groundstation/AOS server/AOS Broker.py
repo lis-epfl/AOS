@@ -55,7 +55,8 @@ drone5_waypoint_no  = 0
 drone6_waypoint_no  = 0
 drone7_waypoint_no  = 0
 drone8_waypoint_no  = 0
-drone9_waypoint_no  = 0
+drone9_waypoint_no  = 0 
+
 drone10_waypoint_no = 0
 
 
@@ -64,14 +65,14 @@ lock = threading.Lock()
 debug = True
 crop_size = 1080  # original size of image is 1920x1080
 
-# new = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()) # Get the current time as string
-# os.mkdir(r"Result" + new) # Add a separator between the download location and the new folder name
-#  # Create a folder to store the results
-# Download_Location = r"Result" + new # Location to store the results
-# os.mkdir(Download_Location + '/images') # Create a folder to store the images
-# Images_Path = os.path.join(Download_Location,'images')
+new = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()) # Get the current time as string
+os.mkdir(r"Result" + new) # Add a separator between the download location and the new folder name
+ # Create a folder to store the results
+Download_Location = r"Result" + new # Location to store the results
+os.mkdir(Download_Location + '/images') # Create a folder to store the images
+Images_Path = os.path.join(Download_Location,'images')
 
-Way_threshold  = 2 # treshold for the waypoints
+Way_threshold  = 6 # treshold for the waypoints
 
 
 key_pressed = {'t': False, 'l': False, 'w': False, 'i': False, 'q': False} # Dictionary to keep track of key press status (# t for takeoff, l to land, w to start waypoint mission, i to emergency, q to quit)
@@ -541,9 +542,10 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
                 if debug: 
                     print("drone1 Waypoint data sent for go")
                     print ("go thread for drone1:", drone1_Waypoint_sent, incrementor)
+                    print("drone1_Telemetry_data_for_go:", drone1_Telemetry_data)
                 break # Exit the loop
             
-        print("drone1 waiting to reach the waypoint...")
+        print("\ndrone1 waiting to reach the waypoint...\n")
         
         while True:
             drone1_Image_Telemetry_data = w.getImageAndTelemetryData(1)
@@ -563,6 +565,7 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
                 if debug:
                     print("drone1 Waypoint has been reached")
                     print ("go thread waypoint reached for drone1:", drone1_Waypoint_reached, incrementor)
+                    print("drone1_Telemetry_data_after_reaching_go:", drone1_Telemetry_data)
                 break # Exit the loop
         
         # Call the telemetry data again
@@ -617,11 +620,15 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
                 if debug: 
                     print("drone1 Waypoint data sent")
                     print ("run thread for drone1:", drone1_Waypoint_sent, incrementor)
+                    print("drone1_send_data_after_sending:", drone1_send_data)
+                    print("drone1_Telemetry_data:", drone1_Telemetry_data)
+                    print("Elements 14 and 15:", drone1_elements[14], drone1_elements[15])
                     
                 break # Exit the loop
             
 
         while True:
+            drone1_send_data = w.sendWayPointData(drone1_waypoint_data, 1) 
             drone1_Image_Telemetry_data = w.getImageAndTelemetryData(1)
             drone1_Telemetry_data = (bytearray(drone1_Image_Telemetry_data[3110408:]).decode())
             
@@ -633,6 +640,7 @@ def waypoint_tread_drone1(drone1_Latitude_List, drone1_Longitude_list, drone1_Al
                 if debug:
                     print("drone1 Waypoint has been reached")
                     print ("run thread waypoint reached:", drone1_Waypoint_reached, incrementor)
+                    print("drone1_Telemetry_data_after_reaching:", drone1_Telemetry_data)
                 break # Exit the loop
             
         # Hold the drone at the waypoint for a specified length of time
