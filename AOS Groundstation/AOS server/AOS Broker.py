@@ -312,7 +312,7 @@ def publisher_thread(broker, port, topic, username, password):
                 depth = 3
                 processedImageSize = width * height * depth
 
-                # Resize the image to be 640x360
+                # Resize the image
                 Image = cv2.resize(Image, (width, height))
 
                 # Shared memory configuration for multiple images
@@ -322,6 +322,9 @@ def publisher_thread(broker, port, topic, username, password):
 
                 # Write the image to shared memory
                 try:
+                    
+                    print ("Writing processed image to shared memory for drone ID:", droneId)
+                    
                     # Open (or create) the memory mapped file with the total size for all blocks
                     processedMMF = mmap.mmap(-1, totalMMFSize, "ProcessedImageSharedMemory")
                     
