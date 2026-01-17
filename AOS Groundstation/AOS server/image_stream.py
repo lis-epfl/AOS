@@ -12,7 +12,7 @@ import utils.imageSharingUtil as imageSharingUtil
 
 print("Starting Image test...")
 
-num_drones = 1
+num_drones = 3
 decode = w.isHWDecoderEnabled()
 
 if decode == 1:
@@ -23,8 +23,8 @@ else:
     print('Invalid decoding method')
 
 # Shared memory configuration
-width = 1920
-height = 1080
+width = 640
+height = 360
 depth = 3
 processedImageSize = width * height * depth
 metadataSize = 12
@@ -90,10 +90,10 @@ def process_drone(drone_id):
                     blockOffset = (drone_id - 1) * blockSize
 
                     # Optionally flip the image vertically
-                    flipped_image = cv2.flip(Image, 0)
+                    # Image = cv2.flip(Image, 0)
 
                     # Write the memory block (header and image data)
-                    imageSharingUtil.write_memory(processedMMF, blockOffset, processedImageSize, flipped_image, drone_id - 1, heading, enable_debug=True)
+                    imageSharingUtil.write_memory(processedMMF, blockOffset, processedImageSize, Image, drone_id - 1, heading, enable_debug=True)
                     
                     # Clean up image
                     del Image
