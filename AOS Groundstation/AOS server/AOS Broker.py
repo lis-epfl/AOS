@@ -326,7 +326,7 @@ def publisher_thread(broker, port, topic, username, password):
                     print ("Writing processed image to shared memory for drone ID:", droneId)
                     
                     # Open (or create) the memory mapped file with the total size for all blocks
-                    processedMMF = mmap.mmap(-1, totalMMFSize, "ProcessedImageSharedMemory")
+                    processedMMF = mmap.mmap(-1, totalMMFSize, "BlockSharedMemory")
                     
                     # Compute the block offset for this droneId (assumed to be in the range [0, numImages-1])
                     blockOffset = (droneId-1) * blockSize

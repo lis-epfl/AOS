@@ -33,7 +33,7 @@ totalMMFSize = num_drones * blockSize
 
 # Create shared memory mapped file once
 try:
-    processedMMF = mmap.mmap(-1, totalMMFSize, "ProcessedImageSharedMemory")
+    processedMMF = mmap.mmap(-1, totalMMFSize, "BlockSharedMemory")
 except Exception as e:
     print(f"Error creating shared memory: {e}")
     processedMMF = None

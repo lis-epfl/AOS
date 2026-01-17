@@ -23,8 +23,8 @@ TARGET_SESSION_DIR = "saved_streams\captured_drone_images_20260116_152702"
 
 # --- Shared Memory Initialization ---
 try:
-    processedMMF = mmap.mmap(-1, totalMMFSize, "ProcessedImageSharedMemory")
-    print("Connected to Shared Memory: ProcessedImageSharedMemory")
+    processedMMF = mmap.mmap(-1, totalMMFSize, "BlockSharedMemory")
+    print("Connected to Shared Memory: BlockSharedMemory")
 except Exception as e:
     print(f"Error creating shared memory: {e}")
     processedMMF = None
