@@ -8,8 +8,8 @@ import utils.imageSharingUtil as imageSharingUtil
 
 # --- Configuration (Matching image_stream.py and image_save.py) ---
 num_drones = 3  
-width = 960
-height = 540
+width = 1920
+height = 1080
 depth = 3
 processedImageSize = width * height * depth
 metadataSize = 12
@@ -97,7 +97,7 @@ def process_drone_files(drone_id):
                             blockOffset = (drone_id - 1) * blockSize
                             
                             # Flip image to match streaming logic
-                            # flipped_image = cv2.flip(image, 0)
+                            image = cv2.flip(image, 0)
 
                             # Write to shared memory
                             imageSharingUtil.write_memory(

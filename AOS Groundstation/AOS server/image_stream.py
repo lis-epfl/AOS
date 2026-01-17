@@ -12,7 +12,7 @@ import utils.imageSharingUtil as imageSharingUtil
 
 print("Starting Image test...")
 
-num_drones = 3
+num_drones = 1
 decode = w.isHWDecoderEnabled()
 
 if decode == 1:
